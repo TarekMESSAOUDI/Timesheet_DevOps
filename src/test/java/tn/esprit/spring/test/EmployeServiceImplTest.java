@@ -41,9 +41,12 @@ public class EmployeServiceImplTest {
 	public void testaddemploye() {
 		Employe employe = new Employe("Tarek","Messaoudi","tarek.messaoudi1@esprit.tn",true,Role.INGENIEUR,"tarek");
 	es.ajouterEmploye(employe);
+	assertNotNull(employe.getIdEmploye());
+	er.deleteById(employe.getIdEmploye());
 	l.info("addEmploye :" + employe);
 	}
 	
+
 	
 	//test du nombre des lignes dans la base il doit etre sup à 0
 	@Test
@@ -72,7 +75,7 @@ public class EmployeServiceImplTest {
 	// test du suppression de l'employee
 	@Test(timeout = 5000)
 	public void testDeleteEmploye() {
-	es.deleteEmployeById(6);
+	es.deleteEmployeById((int) 6);
 	l.info("deleted successfuly" );
 	}
 
