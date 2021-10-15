@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -50,13 +51,14 @@ public class Employe implements Serializable{
 	
 	
 	@OneToOne
-	private Contrat Contrat; 
+	private Contrat contrat; 
 	
-	@OneToMany (mappedBy="Employe", cascade = CascadeType.ALL)
-	private Set<Timesheet> Timesheet;
+	@OneToMany (mappedBy="employe", cascade = CascadeType.ALL)
+	private Set<Timesheet> timesheet;
 	
-	@ManyToMany(mappedBy="Employe", cascade = CascadeType.ALL)
-	private Set<Departement> Departement;
+	@JsonIgnore
+	@ManyToMany(mappedBy="employe", cascade = CascadeType.ALL)
+	private Set<Departement> departement;
 
 	public Long getIdEmploye() {
 		return idEmploye;
@@ -107,28 +109,28 @@ public class Employe implements Serializable{
 	}
 
 	public Contrat getContrat() {
-		return Contrat;
+		return contrat;
 	}
 
 	public void setContrat(Contrat contrat) {
-		Contrat = contrat;
+		this.contrat = contrat;
 	}
 
 
 	public Set<Departement> getDepartement() {
-		return Departement;
+		return departement;
 	}
 
 	public void setDepartement(Set<Departement> departement) {
-		this.Departement = departement;
+		this.departement = departement;
 	}
 
 	public Set<Timesheet> getTimesheet() {
-		return Timesheet;
+		return timesheet;
 	}
 
 	public void setTimesheet(Set<Timesheet> timesheet) {
-		Timesheet = timesheet;
+		this.timesheet = timesheet;
 	}
 
 	public String getPassword() {
@@ -139,34 +141,9 @@ public class Employe implements Serializable{
 		this.password = password;
 	}
 
-	public Employe(Long idEmploye, String nomEmploye, String prenomEmploye, String emailEmploye, boolean isActif,
-			Role roleEmploye, Contrat contrat, Set<Timesheet> timesheet,
-			Set<Departement> departement) {
-		super();
-		this.idEmploye = idEmploye;
-		this.nomEmploye = nomEmploye;
-		this.prenomEmploye = prenomEmploye;
-		this.emailEmploye = emailEmploye;
-		this.actif = isActif;
-		this.roleEmploye = roleEmploye;
-		Contrat = contrat;
-		Timesheet = timesheet;
-		Departement = departement;
-	}
 	
 	public Employe() {
 		super();
-	}
-
-	public Employe(String nomEmploye, String prenomEmploye, String emailEmploye, boolean actif, Role roleEmploye,
-			String password) {
-		super();
-		this.nomEmploye = nomEmploye;
-		this.prenomEmploye = prenomEmploye;
-		this.emailEmploye = emailEmploye;
-		this.actif = actif;
-		this.roleEmploye = roleEmploye;
-		this.password = password;
 	}
 
 	public Employe(long idEmploye, String nomEmploye, String prenomEmploye, String emailEmploye, boolean actif,
@@ -180,7 +157,16 @@ public class Employe implements Serializable{
 		this.roleEmploye = roleEmploye;
 		this.password = password;
 	}
-	
-	
-	
+
+	public Employe(String nomEmploye, String prenomEmploye, String emailEmploye, boolean actif, Role roleEmploye,
+			String password) {
+		super();
+		this.nomEmploye = nomEmploye;
+		this.prenomEmploye = prenomEmploye;
+		this.emailEmploye = emailEmploye;
+		this.actif = actif;
+		this.roleEmploye = roleEmploye;
+		this.password = password;
+	}
+
 }

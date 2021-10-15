@@ -16,7 +16,10 @@ import javax.persistence.Table;
 @Table (name = "T_ENTREPRISE")
 public class Entreprise implements Serializable{
 	
-	private static long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3009482349808085736L;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -29,18 +32,8 @@ public class Entreprise implements Serializable{
 	private String raisonSocial;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="Entreprise")
-	private Set<Departement> Departement;
-
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
-	public static void setSerialversionuid(long serialversionuid) {
-		serialVersionUID = serialversionuid;
-	}
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="entreprise")
+	private Set<Departement> departement;
 
 
 	public Long getIdEntreprise() {
@@ -74,12 +67,12 @@ public class Entreprise implements Serializable{
 
 
 	public Set<Departement> getDepartement() {
-		return Departement;
+		return departement;
 	}
 
 
 	public void setDepartement(Set<Departement> departement) {
-		Departement = departement;
+		this.departement = departement;
 	}
 
 
@@ -94,6 +87,6 @@ public class Entreprise implements Serializable{
 		this.idEntreprise = idEntreprise;
 		this.nameEntreprise = nameEntreprise;
 		this.raisonSocial = raisonSocial;
-		Departement = departement;
+		this.departement = departement;
 	}
 }
