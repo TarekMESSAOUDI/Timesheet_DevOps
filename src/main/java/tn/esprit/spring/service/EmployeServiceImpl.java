@@ -1,15 +1,12 @@
 package tn.esprit.spring.service;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.entity.Contrat;
-import tn.esprit.spring.entity.Departement;
 import tn.esprit.spring.entity.Employe;
-import tn.esprit.spring.entity.Entreprise;
 import tn.esprit.spring.repository.IEmployeRepository;
 
 @Service
@@ -19,20 +16,21 @@ public class EmployeServiceImpl implements IEmployeService{
 	IEmployeRepository empR;
 
 	@Override
-	public int ajouterEmploye(Employe employe) {
-		// TODO Auto-generated method stub
-		return Integer.valueOf(empR.save(employe).getIdEmploye().toString());
+	public Employe ajouterEmploye(Employe employe) {
+		return empR.save(employe);
 	}
 
 	@Override
 	public String getEmployePrenomById(int employeId) {
-		// TODO Auto-generated method stub
-		return String.valueOf( empR.findById(Long.valueOf(employeId)).get().getNomEmploye().toString());
+		Optional<Employe> employe = empR.findById((long) employeId);
+		if (employe.isPresent()){
+			return employe.get().getNomEmploye();
+		}
+		return  "Employe dose not exist";
 	}
 
 	@Override
 	public long getNombreEmploye() {
-		// TODO Auto-generated method stub
 		return empR.count();
 	}
 	
@@ -43,13 +41,11 @@ public class EmployeServiceImpl implements IEmployeService{
 
 	@Override
 	public List<Employe> getEmployes() {
-		// TODO Auto-generated method stub
 		return (List<Employe>) empR.findAll();
 	}
 
 	@Override
 	public void deleteEmployeById(int employeId) {
-		// TODO Auto-generated method stub
 		empR.deleteById((long) employeId);
 	}
 
