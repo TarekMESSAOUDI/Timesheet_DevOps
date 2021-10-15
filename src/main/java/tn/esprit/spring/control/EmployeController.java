@@ -73,7 +73,7 @@ public class EmployeController {
 		
 		public void removeEmploye(int employeId)
 		{
-		es.deleteEmployeById((int) employeId);
+		es.deleteEmployeById(employeId);
 		}
 
 		public void displayEmploye(Employe empl)

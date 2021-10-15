@@ -9,19 +9,10 @@ import javax.persistence.Entity;
 public class MissionExterne extends Mission implements Serializable{
 	
 
-	
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public static void setSerialversionuid(long serialversionuid) {
-		serialVersionUID = serialversionuid;
-	}
-
 	/**
 	 * 
 	 */
-	private static long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5352957947600081675L;
 
 	private String emailFacturation;
 	
@@ -45,7 +36,6 @@ public class MissionExterne extends Mission implements Serializable{
 
 	public MissionExterne() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public MissionExterne(Long idMission, String nameMission, String descriptionMission,

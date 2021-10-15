@@ -17,8 +17,12 @@ import javax.persistence.Table;
 @Table (name = "T_MISSION")
 public class Mission implements Serializable{
 	
-	private static long serialVersionUID = 1L;
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3537594150972176592L;
+
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
@@ -30,19 +34,11 @@ public class Mission implements Serializable{
 	@Column(name="DESCRIPTION")
 	protected String descriptionMission;
 
-	@OneToMany (mappedBy="Mission", cascade = CascadeType.ALL)
-	private Set<Timesheet> Timesheet;
+	@OneToMany (mappedBy="mission", cascade = CascadeType.ALL)
+	private Set<Timesheet> timesheet;
 	
 	@ManyToOne
-	Departement Departement;
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public static void setSerialversionuid(long serialversionuid) {
-		serialVersionUID = serialversionuid;
-	}
+	Departement departement;
 
 	public Long getIdMission() {
 		return idMission;
@@ -69,11 +65,11 @@ public class Mission implements Serializable{
 	}
 
 	public Departement getDepartement() {
-		return Departement;
+		return departement;
 	}
 
 	public void setDepartement(Departement departement) {
-		Departement = departement;
+		this.departement = departement;
 	}
 
 	public Mission() {
@@ -81,11 +77,11 @@ public class Mission implements Serializable{
 	}
 
 	public Set<Timesheet> getTimesheet() {
-		return Timesheet;
+		return timesheet;
 	}
 
 	public void setTimesheet(Set<Timesheet> timesheet) {
-		Timesheet = timesheet;
+		this.timesheet = timesheet;
 	}
 
 	public Mission(Long idMission, String nameMission, String descriptionMission,
@@ -94,8 +90,8 @@ public class Mission implements Serializable{
 		this.idMission = idMission;
 		this.nameMission = nameMission;
 		this.descriptionMission = descriptionMission;
-		Timesheet = timesheet;
-		Departement = departement;
+		this.timesheet = timesheet;
+		this.departement = departement;
 	}
 
 	public Mission(String nameMission, String descriptionMission) {

@@ -2,7 +2,6 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,8 +33,8 @@ public class Contrat implements Serializable{
 	private float salaire;
 
 	
-	@OneToOne(mappedBy="Contrat")
-	private Employe Employe;
+	@OneToOne(mappedBy="contrat")
+	private Employe employe;
 
 
 	public Long getReferenceContrat() {
@@ -79,12 +78,12 @@ public class Contrat implements Serializable{
 
 
 	public Employe getEmploye() {
-		return Employe;
+		return employe;
 	}
 
 
 	public void setEmploye(Employe employe) {
-		Employe = employe;
+		this.employe = employe;
 	}
 
 
@@ -93,10 +92,9 @@ public class Contrat implements Serializable{
 	}
 
 
-	public Contrat(String employe, Long referenceContrat, Date dateDebutContrat, String typeContrat, float salaire
+	public Contrat(Long referenceContrat, Date dateDebutContrat, String typeContrat, float salaire
 			) {
 		super();
-		Employe.getNomEmploye();
 		this.referenceContrat = referenceContrat;
 		this.dateDebutContrat = dateDebutContrat;
 		this.typeContrat = typeContrat;
