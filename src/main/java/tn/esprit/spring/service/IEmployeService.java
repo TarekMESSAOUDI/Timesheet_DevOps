@@ -17,6 +17,6 @@ public interface IEmployeService {
 
 	public List<Employe> getEmployes();
 
-	public void deleteEmployeById(int employeId);
+	public void deleteEmployeById(int long1);
 
 }
