@@ -2,12 +2,11 @@ package tn.esprit.spring.service;
 
 import java.util.List;
 
-import tn.esprit.spring.entity.Contrat;
 import tn.esprit.spring.entity.Employe;
 
 public interface IEmployeService {
 
-	public int ajouterEmploye(Employe employe);
+	public Employe ajouterEmploye(Employe employe);
 	
 	public String getEmployePrenomById(int employeId);
 	
@@ -17,6 +16,6 @@ public interface IEmployeService {
 
 	public List<Employe> getEmployes();
 
-	public void deleteEmployeById(int employeId);
+	public void deleteEmployeById(int long1);
 
 }

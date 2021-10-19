@@ -18,7 +18,10 @@ import javax.persistence.Table;
 @Table (name = "T_DEPARTEMENT")
 public class Departement implements Serializable {
 	
-	private static long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7049001702100456716L;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -29,22 +32,15 @@ public class Departement implements Serializable {
 	private String nameDepartement;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="Departement")
-	private Set<Mission> Mission;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="departement")
+	private Set<Mission> mission;
 
 	@ManyToOne
-	Entreprise Entreprise;
+	Entreprise entreprise;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<Employe> Employe;
+	private Set<Employe> employe;
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public static void setSerialversionuid(long serialversionuid) {
-		serialVersionUID = serialversionuid;
-	}
 
 	public Long getIdDepartement() {
 		return idDepartement;
@@ -63,29 +59,29 @@ public class Departement implements Serializable {
 	}
 
 	public Set<Mission> getMission() {
-		return Mission;
+		return mission;
 	}
 
 	public void setMission(Set<Mission> mission) {
-		Mission = mission;
+		this.mission = mission;
 	}
 
 	public Entreprise getEntreprise() {
-		return Entreprise;
+		return entreprise;
 	}
 
 	public void setEntreprise(Entreprise entreprise) {
-		Entreprise = entreprise;
+		this.entreprise = entreprise;
 	}
 
 
 
 	public Set<Employe> getEmploye() {
-		return Employe;
+		return employe;
 	}
 
 	public void setEmploye(Set<Employe> employe) {
-		Employe = employe;
+		this.employe = employe;
 	}
 
 	public void setIdDepartement(long idDepartement) {
@@ -101,9 +97,9 @@ public class Departement implements Serializable {
 		super();
 		this.idDepartement = idDepartement;
 		this.nameDepartement = nameDepartement;
-		Mission = mission;
-		Entreprise = entreprise;
-		Employe = employe;
+		this.mission = mission;
+		this.entreprise = entreprise;
+		this.employe = employe;
 	}
 
 	public Departement(String nameDepartement) {
