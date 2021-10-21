@@ -2,7 +2,6 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,15 +10,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table (name = "T_TIMESHEET")
 public class Timesheet implements Serializable{
 	
-	private static long serialVersionUID = 1L;
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1701741051604268446L;
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -35,18 +36,11 @@ public class Timesheet implements Serializable{
 
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Employe Employe;
+	private Employe employe;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Mission Mission;
+	private Mission mission;
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public static void setSerialversionuid(long serialversionuid) {
-		serialVersionUID = serialversionuid;
-	}
 
 	public Date getDateDebutTimesheet() {
 		return dateDebutTimesheet;
@@ -74,27 +68,19 @@ public class Timesheet implements Serializable{
 	
 
 	public Employe getEmploye() {
-		return Employe;
+		return employe;
 	}
 
 	public void setEmploye(Employe employe) {
-		Employe = employe;
+		this.employe = employe;
 	}
 
 	public Mission getMission() {
-		return Mission;
+		return mission;
 	}
 
 	public void setMission(Mission mission) {
-		Mission = mission;
-	}
-
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
-
-	public static void setSerialVersionUID(long serialVersionUID) {
-		Timesheet.serialVersionUID = serialVersionUID;
+		this.mission = mission;
 	}
 
 	public Long getId() {
@@ -116,8 +102,8 @@ public class Timesheet implements Serializable{
 		this.dateDebutTimesheet = dateDebutTimesheet;
 		this.dateFinTimesheet = dateFinTimesheet;
 		this.isValide = isValide;
-		Employe = employe;
-		Mission = mission;
+		this.employe = employe;
+		this.mission = mission;
 	}
 
 }

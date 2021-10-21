@@ -21,10 +21,10 @@ public interface IEmployeRepository  extends CrudRepository<Employe,Long>{
 
 	@Query("Select "
 			+ "DISTINCT e from Employe e "
-			+ "join e.Departement dep "
-			+ "join dep.Entreprise entrep "
+			+ "join e.departement dep "
+			+ "join dep.entreprise entrep "
 			+ "where entrep=:entreprise")
-    public List<Employe> getAllEmployeByEntreprisec(@Param("entreprise") Entreprise entreprise);
+    public List<Employe> getAllEmployeByEntreprise(@Param("entreprise") Entreprise entreprise);
 	
 
 	@Query("SELECT e FROM Employe e WHERE e.emailEmploye=:email and e.password=:password")
