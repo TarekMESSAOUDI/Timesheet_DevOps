@@ -110,6 +110,20 @@ public class Departement implements Serializable {
 	public Departement(String nameDepartement) {
 		super();
 		this.nameDepartement = nameDepartement;
+	}
+	
+	
+
+	public Departement(long idDepartement, String nameDepartement, Entreprise entreprise) {
+		super();
+		this.idDepartement = idDepartement;
+		this.nameDepartement = nameDepartement;
+		this.entreprise = entreprise;
+	}
+
+	public Object getId() {
+	
+		return null;
 	} 
 	
 	
