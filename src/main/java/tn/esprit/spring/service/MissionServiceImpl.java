@@ -14,7 +14,7 @@ public class MissionServiceImpl implements IMissionService {
 
 	
 	@Autowired
-	IMissionRepository Mr ;
+	IMissionRepository mr ;
 	
 	
 	
@@ -22,19 +22,19 @@ public class MissionServiceImpl implements IMissionService {
 	
 	@Override
 	public List<Mission> getMissions() {
-		return (List<Mission>) Mr.findAll();
+		return (List<Mission>) mr.findAll();
 	}
 	
 	@Override
 	public long ajouterMission(Mission mission) {
-		Mr.save(mission);
+		mr.save(mission);
 		return (mission).getIdMission();
 	}
 	
 	
 	@Override
 	public long getMissionNumber() {
-		return Mr.count();
+		return mr.count();
 	}
 	
 	
@@ -42,19 +42,19 @@ public class MissionServiceImpl implements IMissionService {
 	@Override
 	public Mission MissionUpadate(Mission Miss) {
 		
-		Mission existingMiss=Mr.findById(Miss.getIdMission()).orElse(null);
+		Mission existingMiss=mr.findById(Miss.getIdMission()).orElse(null);
 		
-		Mr.findById(Miss.getIdMission());
+		mr.findById(Miss.getIdMission());
 		existingMiss.setNameMission(Miss.getNameMission());
 		existingMiss.setDescriptionMission(Miss.getDescriptionMission());
 		
-		return Mr.save(existingMiss);
+		return mr.save(existingMiss);
 	}
 	
 
 	@Override
 	public void deleteMission(int id) {
-		Mr.deleteById((long)id);
+		mr.deleteById((long)id);
 
 	}
 	
