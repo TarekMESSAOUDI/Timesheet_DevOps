@@ -67,11 +67,23 @@
 			<artifactId>primefaces</artifactId>
 			<version>6.1</version>
 		</dependency>
+<<<<<<< HEAD
+		<!--<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.16</version>
+		</dependency>-->
+  		<dependency>
+=======
 		 <dependency>
+>>>>>>> 96f10ff253338f3dc68798e9d64beb67de0c2cdc
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
             <scope>provided</scope>
+<<<<<<< HEAD
+   		 </dependency>
+=======
     </dependency>
 		
 		
@@ -84,6 +96,7 @@
 		</dependency>
 		
 
+>>>>>>> 96f10ff253338f3dc68798e9d64beb67de0c2cdc
 	</dependencies>
 
 	<build>
