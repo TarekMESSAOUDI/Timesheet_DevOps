@@ -35,11 +35,16 @@ public class Departement implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="departement")
 	private Set<Mission> mission;
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="departement")
+	private Set<Projet> projets;
+	
 	@ManyToOne
 	Entreprise entreprise;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Employe> employe;
+	
+	
 
 
 	public Long getIdDepartement() {
