@@ -54,7 +54,6 @@ public class EmployeServiceImplTest {
 	@Test
 	public void testcountEmploye() {
 	List<Employe> e = (List<Employe>) er.findAll();
-	long nbrEm = er.count();
 	assertNotNull(e);
 	}
 	
