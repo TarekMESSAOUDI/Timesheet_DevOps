@@ -29,9 +29,17 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+<<<<<<< HEAD
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
+=======
+>>>>>>> 96f10ff253338f3dc68798e9d64beb67de0c2cdc
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
