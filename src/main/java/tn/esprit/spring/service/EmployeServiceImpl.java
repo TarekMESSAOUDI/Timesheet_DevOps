@@ -14,6 +14,9 @@ public class EmployeServiceImpl implements IEmployeService{
 
 	@Autowired
 	IEmployeRepository empR;
+	
+	@Autowired
+	IEmployeService emps;
 
 	@Override
 	public Employe ajouterEmploye(Employe employe) {
