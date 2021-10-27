@@ -15,7 +15,7 @@ Pipeline{
 			}
 		}
 
-		/*stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
+		stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
 			steps{
 				bat """mvn clean install"""
 			}
@@ -43,7 +43,7 @@ Pipeline{
 			steps{
 				bat """mvn deploy"""
 			}
-		}*/
+		}
 
 	}
 
