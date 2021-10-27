@@ -15,7 +15,7 @@ pipeline{
 			}
 		}
 
-		stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
+		/*stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
 			steps{
 				bat """mvn clean install"""
 			}
@@ -37,7 +37,7 @@ pipeline{
 			steps{
 				bat """mvn sonar:sonar"""
 			}
-		}
+		}*/
 
 		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
 			steps{
