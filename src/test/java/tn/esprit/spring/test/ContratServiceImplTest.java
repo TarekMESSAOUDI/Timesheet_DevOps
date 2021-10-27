@@ -1,5 +1,7 @@
 package tn.esprit.spring.test;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -30,6 +32,7 @@ public class ContratServiceImplTest {
 		contrat.setDateDebutContrat(null);
 		contrat.setTypeContrat("CDI");
 		contrat.setSalaire(1500);
+		assertNotNull(contrat);
 		contrat = c.ajouterContrat(contrat);
 		
 	}
@@ -37,6 +40,7 @@ public class ContratServiceImplTest {
 	@Test(timeout = DEFAULT_TIMEOUT)
 	public void deleteContrat() {
 		Contrat contrat = new Contrat();
+		assertNotNull(contrat);
 		int id = 4 ;
 		c.deleteContratById(id);
 		
