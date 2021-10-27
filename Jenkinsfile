@@ -1,11 +1,11 @@
-Pipeline{
+pipeline{
 		agent any 
 	stages{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
 					git branch: 'master',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps.git',
+					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
 
@@ -27,7 +27,7 @@ Pipeline{
 			}
 		}
 
-				stage ("Création du livrable dans target"){
+		stage ("Création du livrable dans target"){
 			steps{
 				bat """mvn package"""
 			}
@@ -39,20 +39,20 @@ Pipeline{
 			}
 		}
 
-		stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
 			steps{
 				bat """mvn deploy"""
 			}
-		}
+		}*/
 
 	}
 
 	post{
 		success{
-			emailtext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
 		}
 		failure{
-			emailtext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
 		}
 
 	}
