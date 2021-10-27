@@ -70,11 +70,12 @@
 			<version>3.4.1.Final</version>
 		</dependency>
 		
+		<!--  
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>6.1</version>
-		</dependency>
+		</dependency>-->
 
 		<!--<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -106,6 +107,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
+			<!-- Jacoco plugin -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
          		<artifactId>jacoco-maven-plugin</artifactId>
