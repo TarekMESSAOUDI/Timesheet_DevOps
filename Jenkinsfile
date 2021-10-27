@@ -5,7 +5,7 @@ Pipeline{
 			steps{
 				echo 'Pulling...';
 					git branch: 'master',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps.git',
+					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps',
 			}
 		}
 
