@@ -5,7 +5,7 @@ Pipeline{
 			steps{
 				echo 'Pulling...';
 					git branch: 'master',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps',
+					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
 
@@ -21,7 +21,7 @@ Pipeline{
 			}
 		}
 
-		/*stage ("Lancement des Tests Unitaires"){
+		stage ("Lancement des Tests Unitaires"){
 			steps{
 				bat """mvn test"""
 			}
@@ -43,7 +43,7 @@ Pipeline{
 			steps{
 				bat """mvn deploy"""
 			}
-		}*/
+		}
 
 	}
 
