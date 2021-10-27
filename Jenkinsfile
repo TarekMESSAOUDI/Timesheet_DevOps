@@ -39,20 +39,20 @@ pipeline{
 			}
 		}
 
-		stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
 			steps{
 				bat """mvn deploy"""
 			}
-		}
+		}*/
 
 	}
 
 	post{
 		success{
-			emailtext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
 		}
 		failure{
-			emailtext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
 		}
 
 	}
