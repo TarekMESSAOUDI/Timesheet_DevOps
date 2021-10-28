@@ -27,7 +27,7 @@ pipeline{
 			}
 		}
 
-		stage ("Création du livrable dans target"){
+		stage ("Creation du livrable"){
 			steps{
 				bat """mvn package"""
 			}
