@@ -15,9 +15,9 @@ pipeline{
 			}
 		}
 
-		stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
+		stage ("Clean install ignore Test"){
 			steps{
-				bat """mvn clean install"""
+				bat """mvn clean install -Dmaven.test.skip=true"""
 			}
 		}
 
