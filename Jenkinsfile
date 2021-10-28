@@ -27,7 +27,7 @@ pipeline{
 			}
 		}
 
-		stage ("Creation du livrable"){
+		stage ("Creation du livrable .jar"){
 			steps{
 				bat """mvn package"""
 			}
