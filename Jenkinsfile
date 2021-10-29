@@ -39,11 +39,11 @@ pipeline{
 			}
 		}
 
-		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		stage ("Deploiement dans http://localhost:8081/repository/maven-snapshots/ "){
 			steps{
-				bat """mvn deploy"""
+				bat """mvn clean package -Dmaven.test.skip=true -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-snapshots/ -Dfile=target/Timesheet_DevOps-1.0.jar"""
 			}
-		}*/
+		}
 
 	}
 
