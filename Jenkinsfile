@@ -39,11 +39,11 @@ pipeline{
 			}
 		}
 
-		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		stage ("Deploiement dans http://localhost:8081/repository/maven-snapshots/ "){
 			steps{
 				bat """mvn deploy"""
 			}
-		}*/
+		}
 
 	}
 
