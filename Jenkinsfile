@@ -15,9 +15,9 @@ pipeline{
 			}
 		}
 
-		stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
+		stage ("Clean install ignore Test"){
 			steps{
-				bat """mvn clean install"""
+				bat """mvn clean install -Dmaven.test.skip=true"""
 			}
 		}
 
@@ -27,7 +27,7 @@ pipeline{
 			}
 		}
 
-		stage ("Création du livrable dans target"){
+		stage ("Creation du livrable"){
 			steps{
 				bat """mvn package"""
 			}
@@ -39,12 +39,11 @@ pipeline{
 			}
 		}
 
-		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		/*stage ("Deploiement dans http://localhost:8081/repository/maven-snapshots/ "){
 			steps{
-				bat """mvn deploy"""
+				bat """mvn clean package -Dmaven.test.skip=true -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-snapshots/ -Dfile=target/Timesheet_DevOps-1.0-SNAPSHOT.jar"""
 			}
 		}*/
-
 	}
 
 	post{
