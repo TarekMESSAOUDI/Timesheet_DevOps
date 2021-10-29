@@ -33,13 +33,13 @@ pipeline{
 			}
 		}
 
-		/*stage ("Analyse avec Sonar"){
+		stage ("Analyse avec Sonar"){
 			steps{
 				bat """mvn sonar:sonar"""
 			}
 		}
 
-		stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		/*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
 			steps{
 				bat """mvn deploy"""
 			}
