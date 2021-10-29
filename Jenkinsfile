@@ -41,7 +41,7 @@ pipeline{
 
 		stage ("Deploiement dans http://localhost:8081/repository/maven-snapshots/ "){
 			steps{
-				bat """mvn deploy"""
+				bat """mvn deploy -Durl=http://localhost:8081/repository/maven-snapshots/"""
 			}
 		}
 
