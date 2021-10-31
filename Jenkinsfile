@@ -44,7 +44,7 @@ pipeline{
 		// 		bat """mvn deploy"""
 		// 	}
 		// }*/
-
+//
 
 	}
 
