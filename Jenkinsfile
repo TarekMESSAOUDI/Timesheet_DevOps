@@ -44,16 +44,16 @@ pipeline{
 		// 		bat """mvn deploy"""
 		// 	}
 		// }*/
-
+		//
 
 	}
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
 		}
 
 	}
