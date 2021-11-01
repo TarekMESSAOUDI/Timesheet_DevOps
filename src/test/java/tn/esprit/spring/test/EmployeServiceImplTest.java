@@ -47,14 +47,14 @@ public class EmployeServiceImplTest {
 	@Test
 	public void testListEmploye() {
 	List<Employe> e = (List<Employe>) er.findAll();
-	assertThat(e).size().isGreaterThan(0);
+	assertThat(e).size().isPositive();
 	}
 	
 	//test de la methode count "le retour de la methode ne doit pas etre null".
 	@Test
 	public void testcountEmploye() {
-	long nbrEm = er.count();
-	assertNotNull(nbrEm);
+	List<Employe> e = (List<Employe>) er.findAll();
+	assertNotNull(e);
 	}
 	
 	//test que le nom n'est pas null
@@ -67,8 +67,10 @@ public class EmployeServiceImplTest {
 	// test du suppression de l'employee
 	@Test(timeout = 5000)
 	public void testDeleteEmploye() {
-	es.deleteEmployeById(6);
-	l.info("deleted successfuly" );
+		Employe emp = new Employe();
+		assertNotNull(emp);
+		er.deleteById((long) 6);
+		l.info("deleted successfuly" );
 	}
 
 }

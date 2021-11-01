@@ -26,6 +26,7 @@ public class EmployeRestController {
 	@Autowired
 	IEmployeRepository empR;
 	
+	//http://localhost:9090/SpringMVC/servlet/ajouter-employe
 	@PostMapping("/ajouter-employe")
 	@ResponseBody
 	public Employe ajouterEmploye(@RequestBody Employe employe){

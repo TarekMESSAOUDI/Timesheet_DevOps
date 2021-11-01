@@ -45,6 +45,7 @@ public class ContratServiceImplTest {
 	
 	public void updateContrat()  {
 		
+		
 	}
 	
 	
