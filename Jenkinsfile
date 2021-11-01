@@ -15,37 +15,37 @@ pipeline{
 			}
 		}
 
-		// stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
-		// 	steps{
-		// 		bat """mvn clean install"""
-		// 	}
-		// }
+		 stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
+		 	steps{
+		 		bat """mvn clean install"""
+		 	}
+		 }
 
-		// stage ("Lancement des Tests Unitaires"){
-		// 	steps{
-		// 		bat """mvn test"""
-		// 	}
-		// }
+		 stage ("Lancement des Tests Unitaires"){
+		 	steps{
+		 		bat """mvn test"""
+		 	}
+		 }
 
-		// stage ("Création du livrable dans target"){
-		// 	steps{
-		// 		bat """mvn package"""
-		// 	}
-		// }
+		 stage ("Création du livrable dans target"){
+		 	steps{
+		 		bat """mvn package"""
+		 	}
+		 }
 
-		// stage ("Analyse avec Sonar"){
-		// 	steps{
-		// 		bat """mvn sonar:sonar"""
-		// 	}
-		// }
+		 stage ("Analyse avec Sonar"){
+		 	steps{
+		 		bat """mvn sonar:sonar"""
+		 	}
+		 }
 
-		// /*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
-		// 	steps{
-		// 		bat """mvn deploy"""
-		// 	}
-		// }*/
-		//
-		//
+		 stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
+		 	steps{
+		 		bat """mvn deploy"""
+		 	}
+		 }
+		
+		
 
 	}
 
