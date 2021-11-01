@@ -5,7 +5,7 @@ pipeline{
 			steps{
 				echo 'Pulling...';
 					git branch: 'master',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
+					url : 'https://github.com/medamin20/Timesheet_DevOps';
 			}
 		}
 
@@ -44,8 +44,7 @@ pipeline{
 		// 		bat """mvn deploy"""
 		// 	}
 		// }*/
-		//
-		//
+		
 
 	}
 
