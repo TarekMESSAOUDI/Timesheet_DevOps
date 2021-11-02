@@ -8,7 +8,6 @@ pipeline{
 					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
-
 		/*stage ("Verification du  version Maven"){
 			steps{
 				bat """mvn -version"""
