@@ -1,11 +1,10 @@
 package tn.esprit.spring.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.entity.Departement;
 import tn.esprit.spring.entity.Projet;
 import tn.esprit.spring.repository.IEmployeRepository;
 import tn.esprit.spring.repository.IProjetRepository;
@@ -29,8 +28,12 @@ public class ProjetServiceImpl implements IProjetService {
 
 	@Override
 	public void deleteProjectById(int projId) {
-	prorep.delete(prorep.findById(projId).get());
-	}
+		Optional<Projet> p = prorep.findById(projId);
+		if (p.isPresent()) {
+			Projet pro = p.get();
+			prorep.delete(pro);
+		}
 
+	}
 
 }
