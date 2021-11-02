@@ -21,20 +21,19 @@ import tn.esprit.spring.service.IContratService;
 @SpringBootTest(classes = ContratServiceImpl.class)
 public class ContratServiceImplTest {
 	private static final long DEFAULT_TIMEOUT = 10000;
-	private static final Logger L = LogManager.getLogger(ContratServiceImplTest.class);
+	static final Logger l = LogManager.getLogger(ContratServiceImplTest.class);
 	@Autowired
 	IContratService c;
 	
 	@Test(timeout = DEFAULT_TIMEOUT )
-	public void TestAjouterContrat() {
+	public void testAjouterContrat() {
 		Contrat contrat = new Contrat() ;
 		contrat.setReferenceContrat((long) 1);
 		contrat.setDateDebutContrat(null);
 		contrat.setTypeContrat("CDI");
 		contrat.setSalaire(1500);
 		assertNotNull(contrat);
-		contrat = c.ajouterContrat(contrat);
-		
+		c.ajouterContrat(contrat);	
 	}
 	
 	@Test(timeout = DEFAULT_TIMEOUT)
@@ -47,7 +46,7 @@ public class ContratServiceImplTest {
 		}
 	
 	public void updateContrat()  {
-		
+		//comment here..
 	}
 	
 	
