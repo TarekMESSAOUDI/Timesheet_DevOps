@@ -29,10 +29,10 @@ public class MissionServiceImpTest {
 	
 	
 	@Autowired
-	IMissionRepository Mr ;
+	IMissionRepository imissionRepository ;
 	
 	@Autowired
-	IMissionService Ms ;
+	IMissionService imissionService ;
 	
 	
 	
@@ -40,10 +40,10 @@ public class MissionServiceImpTest {
 		@Test(timeout = DEFAULT_TIMEOUT)
 		public void testaddMission() {
 			Mission mission = new Mission("missionTest","missionTest");
-		Ms.ajouterMission(mission);
+			imissionService.ajouterMission(mission);
 		assertNotNull(mission.getIdMission());
 		l.info("Mission added successfuly ");
-		Mr.deleteById(mission.getIdMission());
+		imissionRepository.deleteById(mission.getIdMission());
 		}
 		
 		
@@ -51,9 +51,10 @@ public class MissionServiceImpTest {
 		//Count missions a make sure the return is  not null
 		@Test
 		public void testcountMission() {
-		long nbrms = Mr.count();
+		long nbrms = imissionRepository.count();
 		assertNotNull(nbrms);
-		l.info("Le Nombre des Employes est :" + nbrms );
+		l.info("Le Nombre des Employes est :");
+		l.info(nbrms);
 		}
 		
 		
@@ -61,9 +62,9 @@ public class MissionServiceImpTest {
 		// Make sure the Database is not Nulls
 		@Test
 		public void testListMission() {
-		List<Mission> e = (List<Mission>) Mr.findAll();
+		List<Mission> e = (List<Mission>) imissionRepository.findAll();
 		assertThat(e).size().isPositive();
-		l.info(e.size() + "> 0" );
+		l.info( "> 0");
 		}
 		
 		
@@ -73,9 +74,8 @@ public class MissionServiceImpTest {
 		
 				@Test
 				public void deleteMission() {
-					Mission mission = new Mission();
 					int id = 2;
-					Ms.deleteMission(id);
+					imissionService.deleteMission(id);
 				}
 				
 

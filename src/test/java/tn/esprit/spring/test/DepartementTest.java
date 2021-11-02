@@ -3,8 +3,6 @@ package tn.esprit.spring.test;
 
 import static org.junit.Assert.*;
 
-import java.text.ParseException;
-
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +34,7 @@ public class DepartementTest {
 	  
 	  
 	  @Test
-	  public void testAddDepartement() throws ParseException {
+	  public void testAddDepartement() {
 	  Departement d = new Departement("DEP B");
 	  Departement savedDepartement = dr.save(d);
 	  assertNotNull(savedDepartement.getId());

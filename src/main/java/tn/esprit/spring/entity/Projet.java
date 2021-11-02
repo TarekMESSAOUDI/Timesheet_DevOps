@@ -111,7 +111,7 @@ public class Projet implements Serializable {
 
 	public Projet() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 }
