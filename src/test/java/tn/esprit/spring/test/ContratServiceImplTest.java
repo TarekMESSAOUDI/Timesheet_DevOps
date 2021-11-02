@@ -32,7 +32,7 @@ public class ContratServiceImplTest {
 		contrat.setSalaire(1500);
 		contrat = c.ajouterContrat(contrat);
 		//test
-		
+		//test
 	}
 	
 	@Test(timeout = DEFAULT_TIMEOUT)
