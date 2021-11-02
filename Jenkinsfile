@@ -20,7 +20,7 @@ pipeline{
 			}
 		}*/
 
-		stage ("Lancement des Tests Unitaires"){
+		stage ("Clean"){
 			steps{
 				bat """mvn clean"""
 			}
