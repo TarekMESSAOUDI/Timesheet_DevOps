@@ -50,14 +50,15 @@ pipeline{
 				bat """mvn clean package -Dmaven.test.skip=true -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-1.0.jar"""
 			}
 		}
+
 	}
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
 		}
 
 	}
