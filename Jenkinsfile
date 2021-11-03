@@ -1,5 +1,10 @@
 pipeline{
-		agent any 
+	environment{
+		registry = "193jmt5213/timesheet_devops"
+		registryCredential= '193jmt5213'
+		dockerImage = ''
+	}
+	agent any 
 	stages{
 		stage ('Checkout GIT'){
 			steps{
@@ -8,11 +13,24 @@ pipeline{
 					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
-		/*stage ("Verification du  version Maven"){
+
+		stage('Building our image') {
+			steps { script { dockerImage= docker.build registry + ":$BUILD_NUMBER" } }
+		}
+
+		stage('Deploy our image') {
+			steps { script { docker.withRegistry( '', registryCredential) { dockerImage.push() } } }
+			}
+
+		stage('Cleaning up') {
+			steps { bat "docker rmi $registry:$BUILD_NUMBER" }
+		}
+
+		stage ("Verification du  version Maven"){
 			steps{
 				bat """mvn -version"""
 			}
-		}*/
+		}
 
 		/*stage ("Clean install ignore Test"){
 			steps{
@@ -54,10 +72,10 @@ pipeline{
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
 		}
 
 	}
