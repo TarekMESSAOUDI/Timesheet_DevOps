@@ -22,3 +22,4 @@ ADD target/*.jar app.jar
 EXPOSE 8080
 # Run app.jar when the container launches
 CMD ["java", "-jar", "/app/app.jar"] 
+
