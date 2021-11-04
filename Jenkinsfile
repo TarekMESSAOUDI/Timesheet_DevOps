@@ -1,7 +1,7 @@
 pipeline{
 	environment{
 		registry = '193jmt5213/timesheet_devops'
-		registryCredential= '193jmt5213/curvanord193JMT5213'
+		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
 	agent any 
@@ -80,6 +80,7 @@ pipeline{
 			}
 		}
 }
+
 	post{
 		success{
 			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
