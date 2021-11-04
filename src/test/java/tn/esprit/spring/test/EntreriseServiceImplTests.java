@@ -62,14 +62,14 @@ public class EntreriseServiceImplTests {
 	//test que le nom n'est pas null
 	@Test
 	public void testNomEnttreprise(){
-		Entreprise e = er.findByNameEntreprsie("Moneim Entrepsie");
+		Entreprise e = er.findByNameEntreprsie("Moneim Ent");
 		assertNotNull(e.getNameEntreprise());
 	}
 	
 	// test du suppression de l'entreprise
 	@Test(timeout = 5000) 
 	public void testDeleteEmploye() {
-	es.deleteEntrepriseById(1);
+	es.deleteEntrepriseById(3);
 	l.info("deleted successfuly" );
 	}
 

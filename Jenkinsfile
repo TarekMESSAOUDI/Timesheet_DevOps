@@ -26,17 +26,17 @@ pipeline{
 			steps { bat "docker rmi $registry:$BUILD_NUMBER" }
 		}
 
-		/*stage ("Verification du  version Maven"){
+		stage ("Verification du  version Maven"){
 			steps{
 				bat """mvn -version"""
 			}
 		}
 
-		stage ("Clean install ignore Test"){
+		/*stage ("Clean install ignore Test"){
 			steps{
 				bat """mvn clean install -Dmaven.test.skip=true"""
 			}
-		}
+		}*/
 
 		stage ("Clean"){
 			steps{
@@ -68,7 +68,7 @@ pipeline{
 			}
 		}
 		
-	}*/
+	}
 
 	post{
 		success{

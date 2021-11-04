@@ -29,13 +29,6 @@ public class Entreprise implements Serializable{
 	@Column(name="NAME")
 	private String nameEntreprise;
 	
-	public Entreprise(String nameEntreprise, String raisonSocial) {
-		super();
-		this.nameEntreprise = nameEntreprise;
-		this.raisonSocial = raisonSocial;
-	}
-
-
 	private String raisonSocial;
 	
 	
@@ -95,5 +88,12 @@ public class Entreprise implements Serializable{
 		this.nameEntreprise = nameEntreprise;
 		this.raisonSocial = raisonSocial;
 		this.departement = departement;
+	}
+
+
+	public Entreprise(String nameEntreprise, String raisonSocial) {
+		super();
+		this.nameEntreprise = nameEntreprise;
+		this.raisonSocial = raisonSocial;
 	}
 }
