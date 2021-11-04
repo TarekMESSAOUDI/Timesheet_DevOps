@@ -20,7 +20,7 @@ import tn.esprit.spring.service.IEmployeService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EmployeServiceImplTest {
+public class EmployeServiceImplTest{
 	
 	private static final long DEFAULT_TIMEOUT = 10000;
 	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
