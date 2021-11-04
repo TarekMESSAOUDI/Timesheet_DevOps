@@ -2,6 +2,8 @@ package tn.esprit.spring.service;
 
 import java.util.List;
 import java.util.Optional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +19,12 @@ public class EmployeServiceImpl implements IEmployeService{
 	
 	@Autowired
 	IEmployeService emps;
+	
+	private static final Logger l = LogManager.getLogger(EmployeServiceImpl.class);
 
 	@Override
 	public Employe ajouterEmploye(Employe employe) {
+		l.info("employe added");
 		return empR.save(employe);
 	}
 
