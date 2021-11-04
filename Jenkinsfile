@@ -1,8 +1,8 @@
 pipeline{
 	environment{
-		registry = "193jmt5213/timesheet_devops"
-		registryCredential= "193jmt5213"
-		dockerImage = ""
+		registry = '193jmt5213/timesheet_devops'
+		registryCredential= '193jmt5213'
+		dockerImage = ''
 	}
 	agent any 
 	stages{
@@ -67,19 +67,19 @@ pipeline{
 		stage('Deploy our image'){
 			steps{ 
 				script{
-					docker.withRegistry( '', registryCredential){
+					docker.withRegistry( 'https://registry.hub.docker.com', registryCredential){
 						dockerImage.push()
 					} 
 				} 
 			}
 		}
 
-		stage('Cleaning up'){
+		/*stage('Cleaning up'){
 			steps{
 				bat "docker rmi $registry:$BUILD_NUMBER" 
 			}
-		}
-
+		}*/
+}
 	post{
 		success{
 			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
