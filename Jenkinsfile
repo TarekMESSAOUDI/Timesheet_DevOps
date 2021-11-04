@@ -80,6 +80,7 @@ pipeline{
 			}
 		}
 }
+
 	post{
 		success{
 			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
