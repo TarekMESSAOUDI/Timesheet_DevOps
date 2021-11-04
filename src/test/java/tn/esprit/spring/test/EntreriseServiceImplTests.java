@@ -54,7 +54,7 @@ public class EntreriseServiceImplTests {
 	
 	//test de la methode count "le retour de la methode ne doit pas etre null".
 	@Test
-	public void testcountEmploye() {
+	public void testcountEntreprises() {
 	long nbrEm = er.count();
 	assertNotNull(nbrEm);
 	}
@@ -67,9 +67,9 @@ public class EntreriseServiceImplTests {
 	}
 	
 	// test du suppression de l'entreprise
-	@Test(timeout = 5000)
+	@Test(timeout = 5000) 
 	public void testDeleteEmploye() {
-	es.deleteEntrepriseById(2);
+	es.deleteEntrepriseById(1);
 	l.info("deleted successfuly" );
 	}
 
