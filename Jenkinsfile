@@ -2,14 +2,14 @@ pipeline{
 	environment{
 		registry = '193jmt5213/timesheet_devops'
 		registryCredential= '193jmt5213/curvanord193JMT5213'
-		dockerImage = 'timesheet_devops'
+		dockerImage = ''
 	}
 	agent any 
 	stages{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'master',
+					git branch: 'Tarek_Branch',
 					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
