@@ -30,7 +30,7 @@ public class TimesheetDevOpsApplicationTests {
 	}
 
 	
-	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
+	/*private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
 
 	@Autowired
 	IEmployeService es;
@@ -88,5 +88,5 @@ public class TimesheetDevOpsApplicationTests {
 		assertNotNull(emp);
 		er.deleteById((long) 1);
 		l.info("Employe deleted successfuly" );
-	}
+	}*/
 }
