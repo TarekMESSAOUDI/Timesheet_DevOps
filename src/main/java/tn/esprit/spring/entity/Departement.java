@@ -26,7 +26,7 @@ public class Departement implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
-	private long idDepartement;
+	private Long idDepartement;
 	
 	@Column(name="NAME")
 	private String nameDepartement;
@@ -51,9 +51,7 @@ public class Departement implements Serializable {
 		return idDepartement;
 	}
 
-	public void setIdDepartement(Long idDepartement) {
-		this.idDepartement = idDepartement;
-	}
+	
 
 	public String getNameDepartement() {
 		return nameDepartement;
@@ -89,7 +87,7 @@ public class Departement implements Serializable {
 		this.employe = employe;
 	}
 
-	public void setIdDepartement(long idDepartement) {
+	public void setIdDepartement(Long idDepartement) {
 		this.idDepartement = idDepartement;
 	}
 
@@ -114,7 +112,7 @@ public class Departement implements Serializable {
 	
 	
 
-	public Departement(long idDepartement, String nameDepartement, Entreprise entreprise) {
+	public Departement(Long idDepartement, String nameDepartement, Entreprise entreprise) {
 		super();
 		this.idDepartement = idDepartement;
 		this.nameDepartement = nameDepartement;

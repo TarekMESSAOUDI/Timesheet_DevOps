@@ -24,11 +24,18 @@ public class Entreprise implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
-	private long idEntreprise;
+	private int idEntreprise;
 	
 	@Column(name="NAME")
 	private String nameEntreprise;
 	
+	public Entreprise(String nameEntreprise, String raisonSocial) {
+		super();
+		this.nameEntreprise = nameEntreprise;
+		this.raisonSocial = raisonSocial;
+	}
+
+
 	private String raisonSocial;
 	
 	
@@ -36,12 +43,12 @@ public class Entreprise implements Serializable{
 	private Set<Departement> departement;
 
 
-	public Long getIdEntreprise() {
+	public int getIdEntreprise() {
 		return idEntreprise;
 	}
 
 
-	public void setIdEntreprise(Long idEntreprise) {
+	public void setIdEntreprise(int idEntreprise) {
 		this.idEntreprise = idEntreprise;
 	}
 
@@ -81,7 +88,7 @@ public class Entreprise implements Serializable{
 	}
 
 
-	public Entreprise(Long idEntreprise, String nameEntreprise, String raisonSocial,
+	public Entreprise(int idEntreprise, String nameEntreprise, String raisonSocial,
 			Set<tn.esprit.spring.entity.Departement> departement) {
 		super();
 		this.idEntreprise = idEntreprise;
