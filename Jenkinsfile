@@ -2,7 +2,7 @@ pipeline{
 	environment{
 		registry = '193jmt5213/timesheet_devops'
 		registryCredential= '193jmt5213'
-		dockerImage = ''
+		dockerImage = 'timesheet_devops'
 	}
 	agent any 
 	stages{
@@ -74,11 +74,11 @@ pipeline{
 			}
 		}
 
-		/*stage('Cleaning up'){
+		stage('Cleaning up'){
 			steps{
 				bat "docker rmi $registry:$BUILD_NUMBER" 
 			}
-		}*/
+		}
 }
 	post{
 		success{
