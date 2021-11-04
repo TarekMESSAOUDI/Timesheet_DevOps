@@ -1,7 +1,7 @@
 pipeline{
 	environment{
 		registry = '193jmt5213/timesheet_devops'
-		registryCredential= '193jmt5213'
+		registryCredential= '193jmt5213/curvanord193JMT5213'
 		dockerImage = 'timesheet_devops'
 	}
 	agent any 
@@ -67,7 +67,7 @@ pipeline{
 		stage('Deploy our image'){
 			steps{ 
 				script{
-					docker.withRegistry( 'https://registry.hub.docker.com', registryCredential){
+					docker.withRegistry( '', registryCredential){
 						dockerImage.push()
 					} 
 				} 
