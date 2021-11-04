@@ -1,7 +1,7 @@
 pipeline{
 	environment{
 		registry = '193jmt5213/timesheet_devops'
-		registryCredential= '193jmt5213'
+		registryCredential= '193jmt5213/curvanord193JMT5213'
 		dockerImage = ''
 	}
 	agent any 
@@ -9,7 +9,7 @@ pipeline{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'master',
+					git branch: 'Tarek_Branch',
 					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
@@ -67,18 +67,18 @@ pipeline{
 		stage('Deploy our image'){
 			steps{ 
 				script{
-					docker.withRegistry( 'https://registry.hub.docker.com', registryCredential){
+					docker.withRegistry( '', registryCredential){
 						dockerImage.push()
 					} 
 				} 
 			}
 		}
 
-		/*stage('Cleaning up'){
+		stage('Cleaning up'){
 			steps{
 				bat "docker rmi $registry:$BUILD_NUMBER" 
 			}
-		}*/
+		}
 }
 	post{
 		success{
