@@ -34,7 +34,7 @@ pipeline{
 
 		stage ("Creation du livrable"){
 			steps{
-				bat """mvn package"""
+				bat """mvn package -Dmaven.test.skip=true"""
 			}
 		}
 
