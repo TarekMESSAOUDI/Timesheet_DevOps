@@ -1,9 +1,9 @@
 pipeline{
-	/*environment{
+	environment{
 		registry = "193jmt5213/timesheet_devops"
-		registryCredential= '193jmt5213'
-		dockerImage = ''
-	}*/
+		registryCredential= "193jmt5213"
+		dockerImage = ""
+	}
 	agent any 
 	stages{
 		stage ('Checkout GIT'){
@@ -20,11 +20,11 @@ pipeline{
 			}
 		}
 
-		stage ("Clean install ignore Test"){
+		/*stage ("Clean install ignore Test"){
 			steps{
 				bat """mvn clean install -Dmaven.test.skip=true"""
 			}
-		}
+		}*/
 
 		stage ("Clean"){
 			steps{
@@ -56,18 +56,29 @@ pipeline{
 			}
 		}
 
-		/*stage('Building our image') {
-			steps { script { dockerImage= docker.build registry + ":$BUILD_NUMBER" } }
+		stage('Building our image') {
+			steps{ 
+				script{ 
+					dockerImage= docker.build registry + ":$BUILD_NUMBER" 
+				}
+			}
 		}
 
-		stage('Deploy our image') {
-			steps { script { docker.withRegistry( '', registryCredential) { dockerImage.push() } } }
+		stage('Deploy our image'){
+			steps{ 
+				script{
+					docker.withRegistry( '', registryCredential){
+						dockerImage.push()
+						} 
+					} 
+				}
 		}
 
 		stage('Cleaning up') {
-			steps { bat "docker rmi $registry:$BUILD_NUMBER" }
-		}*/
-		
+			steps{
+				bat "docker rmi $registry:$BUILD_NUMBER" 
+			}
+		}
 	}
 
 	post{
