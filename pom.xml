@@ -63,11 +63,11 @@
 			<version>3.4.1.Final</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>6.1</version>
-		</dependency>
+		</dependency>-->
 
 		 <dependency>
             <groupId>org.projectlombok</groupId>
@@ -75,9 +75,7 @@
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
             <scope>provided</scope>
-    </dependency>
-		
-		
+    	</dependency>
 		
 		<dependency>
 			<groupId>junit</groupId>
@@ -85,8 +83,7 @@
 			<version>4.12</version><!--$NO-MVN-MAN-VER$-->
 			<scope>test</scope>
 		</dependency>
-		
-
+	
 	</dependencies>
 
 	<build>
