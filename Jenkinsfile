@@ -47,8 +47,6 @@ pipeline{
 		 	}
 		 }
 		
-		
-
 	}
 
 	post{
