@@ -1,7 +1,7 @@
 pipeline{
 	environment{
-		registry = 'http://be46-196-230-110-200.ngrok.io:8085/'
-		registryCredential= 'nexus'
+		registry = '193jmt5213/timesheet_devops'
+		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
 	agent any 
