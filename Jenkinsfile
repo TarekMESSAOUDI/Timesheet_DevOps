@@ -30,6 +30,7 @@ pipeline{
 			steps{
 				bat """mvn clean"""
 			}
+			
 		}
 
 		stage ("Creation du livrable"){
