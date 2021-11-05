@@ -28,6 +28,7 @@ public class Contrat implements Serializable{
 	@Column(name="DATE_DEBUT")
 	private Date dateDebutContrat;
 	
+	
 	private String typeContrat;
 	
 	private float salaire;
