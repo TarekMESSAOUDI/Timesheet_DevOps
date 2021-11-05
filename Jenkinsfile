@@ -1,7 +1,7 @@
 pipeline{
 
 	environment{
-		registry = '193JMT1577/timesheet_devops'
+		registry = 'ghassen1995/timesheet-devops'
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
