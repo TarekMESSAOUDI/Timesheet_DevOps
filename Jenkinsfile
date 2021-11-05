@@ -5,6 +5,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
+	
 
 		agent any 
 	stages{
