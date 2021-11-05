@@ -20,7 +20,7 @@ import tn.esprit.spring.service.IEmployeService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EmployeServiceImplTest {
+public class EmployeServiceImplTest{
 	
 	private static final long DEFAULT_TIMEOUT = 10000;
 	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
@@ -39,6 +39,7 @@ public class EmployeServiceImplTest {
 	assertNotNull(employe.getIdEmploye());
 	l.info("Employe added successfuly ");
 	er.deleteById(employe.getIdEmploye());
+	l.info("Employe deleted successfuly ");
 	}
 	
 
@@ -48,6 +49,11 @@ public class EmployeServiceImplTest {
 	public void testListEmploye() {
 	List<Employe> e = (List<Employe>) er.findAll();
 	assertThat(e).size().isPositive();
+		if (e.isEmpty()){
+			l.info("Employes list is empty: ");
+		}else{
+			l.info("Employes list");
+		}
 	}
 	
 	//test de la methode count "le retour de la methode ne doit pas etre null".
