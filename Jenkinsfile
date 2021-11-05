@@ -5,7 +5,7 @@ pipeline{
 			steps{
 				echo 'Pulling...';
 					git branch: 'Ghassen_Branch',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
+					url : 'https://github.com/GhassenHouissa/Timesheet_DevOps';
 			}
 		}
 
@@ -51,10 +51,10 @@ pipeline{
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'ghassen.houissa1@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'houissaghassen@gmail.com'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'ghassen.houissa1@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'houissaghassen@gmail.com'
 		}
 
 	}
