@@ -43,7 +43,10 @@ pipeline{
 
 		 stage ("Deploiement "){
 		 	steps{
-		 		bat """mvn deploy"""
+		 		bat """mvn clean package -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=2.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-2.0.jar
+
+
+-Dmaven.test.skip=true"""
 		 	}
 		 }
 	}
