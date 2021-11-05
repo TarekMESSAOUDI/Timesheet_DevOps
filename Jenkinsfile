@@ -5,7 +5,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
-	
+
 
 		agent any 
 	stages{
@@ -16,6 +16,7 @@ pipeline{
 					url : 'https://github.com/GhassenHouissa/Timesheet_DevOps';
 			}
 		}
+		
 
 		stage ("Verification du  version Maven"){
 			steps{
