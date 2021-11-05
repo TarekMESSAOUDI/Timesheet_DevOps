@@ -1,6 +1,6 @@
 pipeline{
 	environment{
-		registry = 'localhost:8081/'
+		registry = 'http://be46-196-230-110-200.ngrok.io:8085/'
 		registryCredential= 'nexus'
 		dockerImage = ''
 	}
