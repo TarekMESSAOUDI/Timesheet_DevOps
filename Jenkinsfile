@@ -1,7 +1,7 @@
 pipeline{
 	environment{
-		registry = '193jmt5213/timesheet_devops'
-		registryCredential= 'dockerHub'
+		registry = 'localhost:8081/'
+		registryCredential= 'nexus'
 		dockerImage = ''
 	}
 	agent any 
