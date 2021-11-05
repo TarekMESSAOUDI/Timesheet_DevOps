@@ -59,7 +59,7 @@ public class EntreriseServiceImplTests {
 	assertNotNull(nbrEm);
 	}
 	
-	//test que le nom n'est pas null
+	//test que le nom n'est pas nullgh
 	@Test
 	public void testNomEnttreprise(){
 		Entreprise e = er.findByNameEntreprsie("Moneim Ent");
