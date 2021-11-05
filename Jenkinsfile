@@ -1,42 +1,42 @@
 pipeline{
-	environment{
-		registry = "193jmt5213/timesheet_devops"
-		registryCredential= '193jmt5213'
-		dockerImage = ''
-	}
+	// environment{
+	// 	registry = "193jmt5213/timesheet_devops"
+	// 	registryCredential= '193jmt5213'
+	// 	dockerImage = ''
+	// }
 	agent any 
 	stages{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'master',
+					git branch: 'Moneim_Branch',
 					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
 
-		stage('Building our image') {
-			steps { script { dockerImage= docker.build registry + ":$BUILD_NUMBER" } }
-		}
+		// stage('Building our image') {
+		// 	steps { script { dockerImage= docker.build registry + ":$BUILD_NUMBER" } }
+		// }
 
-		stage('Deploy our image') {
-			steps { script { docker.withRegistry( '', registryCredential) { dockerImage.push() } } }
-			}
+		// stage('Deploy our image') {
+		// 	steps { script { docker.withRegistry( '', registryCredential) { dockerImage.push() } } }
+		// 	}
 
-		stage('Cleaning up') {
-			steps { bat "docker rmi $registry:$BUILD_NUMBER" }
-		}
+		// stage('Cleaning up') {
+		// 	steps { bat "docker rmi $registry:$BUILD_NUMBER" }
+		// }
 
-		stage ("Verification du  version Maven"){
+		// stage ("Verification du  version Maven"){
+		// 	steps{
+		// 		bat """mvn -version"""
+		// 	}
+		// }
+
+		stage ("verification version Maven"){
 			steps{
 				bat """mvn -version"""
 			}
 		}
-
-		/*stage ("Clean install ignore Test"){
-			steps{
-				bat """mvn clean install -Dmaven.test.skip=true"""
-			}
-		}*/
 
 		stage ("Clean"){
 			steps{
@@ -72,10 +72,10 @@ pipeline{
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'hammadi.moneim@esprit.tn'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'hammadi.moneim@esprit.tn'
 		}
 
 	}
