@@ -47,7 +47,7 @@ public class TimesheetDevOpsApplicationTests {
 	es.ajouterEmploye(employe);
 	assertNotNull(employe.getIdEmploye());
 	l.info("Employe added successfuly ");
-	er.deleteById(employe.getIdEmploye());
+	//er.deleteById(employe.getIdEmploye());
 	l.info("Employe deleted successfuly ");
 	}
 	
@@ -86,7 +86,7 @@ public class TimesheetDevOpsApplicationTests {
 	public void testDeleteEmploye() {
 		Employe emp = new Employe();
 		assertNotNull(emp);
-		er.deleteById((long) 17);
+		er.deleteById((long) 16);
 		l.info("Employe deleted successfuly" );
 	}
 }

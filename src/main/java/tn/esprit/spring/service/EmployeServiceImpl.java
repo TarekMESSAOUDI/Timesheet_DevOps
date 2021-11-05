@@ -24,7 +24,7 @@ public class EmployeServiceImpl implements IEmployeService{
 
 	@Override
 	public Employe ajouterEmploye(Employe employe) {
-		l.info("employe added");
+		//l.info("employe added");
 		return empR.save(employe);
 	}
 
@@ -33,15 +33,15 @@ public class EmployeServiceImpl implements IEmployeService{
 		Optional<Employe> employe = empR.findById((long) employeId);
 		if (employe.isPresent()){
 			return employe.get().getNomEmploye();
-		}
-		l.info("Employe Name :" + employe.get().getNomEmploye());
+		}else
+		//l.info("Employe Name :" + employe.get().getNomEmploye());
 		return "Employe dose not exist";
 	}
 
 	@Override
 	public long getNombreEmploye() {
 		long a = empR.count();
-		l.info("Nombres des employes :" + a);
+		//l.info("Nombres des employes :" + a);
 		return a;
 	}
 	
@@ -52,14 +52,14 @@ public class EmployeServiceImpl implements IEmployeService{
 
 	@Override
 	public List<Employe> getEmployes() {
-		l.info("cheking employees...");
+		//l.info("cheking employees...");
 		return (List<Employe>) empR.findAll();
 	}
 
 	@Override
 	public void deleteEmployeById(int employeId) {
 		empR.deleteById((long) employeId);
-		l.info("Employe deleted Succefully");
+		//l.info("Employe deleted Succefully");
 	}
 
 	

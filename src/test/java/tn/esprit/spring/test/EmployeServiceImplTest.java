@@ -22,7 +22,7 @@ import tn.esprit.spring.service.IEmployeService;
 @SpringBootTest
 public class EmployeServiceImplTest{
 	
-	private static final long DEFAULT_TIMEOUT = 10000;
+	/*private static final long DEFAULT_TIMEOUT = 10000;
 	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
 
 	@Autowired
@@ -77,6 +77,6 @@ public class EmployeServiceImplTest{
 		assertNotNull(emp);
 		er.deleteById((long) 6);
 		l.info("deleted successfuly" );
-	}
+	}*/
 
 }
