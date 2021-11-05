@@ -30,7 +30,7 @@ public class TimesheetDevOpsApplicationTests {
 	}
 
 	
-	/*private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
+	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
 
 	@Autowired
 	IEmployeService es;
@@ -76,7 +76,7 @@ public class TimesheetDevOpsApplicationTests {
 	//test que le nom n'est pas null
 	@Test
 	public void testEmailAndPasswordEmploye(){
-		Employe emp = er.getEmployeByEmailAndPassword("tarek.messaoudi@esprit.tn", "tarek");
+		Employe emp = er.getEmployeByEmailAndPassword("tarek.messaoudi1@esprit.tn", "tarek");
 		assertNotNull(emp.getNomEmploye());
 		l.info("Employe :" + emp);
 	}
@@ -86,7 +86,7 @@ public class TimesheetDevOpsApplicationTests {
 	public void testDeleteEmploye() {
 		Employe emp = new Employe();
 		assertNotNull(emp);
-		er.deleteById((long) 1);
+		er.deleteById((long) 24);
 		l.info("Employe deleted successfuly" );
-	}*/
+	}
 }
