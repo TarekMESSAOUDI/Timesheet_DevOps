@@ -5,7 +5,7 @@ pipeline{
 			steps{
 				echo 'Pulling...';
 					git branch: 'Ghassen_Branch',
-					url : 'https://github.com/GhassenHouissa/Timesheet_DevOps';
+					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
 			}
 		}
 
