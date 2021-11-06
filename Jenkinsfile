@@ -11,7 +11,7 @@ pipeline{
 			steps{
 				echo 'Pulling...';
 					git branch: 'Rached_Branch',
-					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps.git';
+					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps';
 
 			}
 		}
