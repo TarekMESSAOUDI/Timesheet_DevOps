@@ -1,9 +1,9 @@
 pipeline{
-	environment{
+	/* environment{
 		registry = 'rachedchakchouk/timesheet_img'
 		registryCredential= 'dockerHub'
 		dockerImage = ''
-	}
+	} */
 
 
 	agent any 
@@ -20,7 +20,7 @@ pipeline{
 
 			}
 
-		/* }
+		}
 
 		stage ("Verification du  version Maven"){
 			steps{
@@ -129,3 +129,4 @@ pipeline{
 		}
 	} 
 }
+
