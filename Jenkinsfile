@@ -22,7 +22,7 @@ pipeline{
 				bat """mvn -version"""
 			}
 		}
-		
+
 
 		 stage ("clean"){
 		 	steps{
@@ -80,6 +80,9 @@ pipeline{
 			steps{
 				bat "docker rmi $registry:$BUILD_NUMBER" 
 			}
+		}
+		stage('email'){
+			mail bcc: '', body: 'jknlk', cc: '', from: '', replyTo: '', subject: 'jhbj', to: 'houissaghassen@gmail.com'
 		}
 	}
 
