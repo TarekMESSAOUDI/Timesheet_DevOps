@@ -9,8 +9,8 @@ pipeline{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'Tarek_Branch',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
+					git branch: 'Rached_Branch',
+					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps.git';
 			}
 		}
 
