@@ -4,7 +4,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
-	
+
 
 	agent any 
 	stages{
@@ -16,7 +16,7 @@ pipeline{
 					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps';
 
 
-					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps.git';
+					
 
 			}
 
