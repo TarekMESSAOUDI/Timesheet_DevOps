@@ -16,13 +16,13 @@ pipeline{
 					url : 'https://github.com/GhassenHouissa/Timesheet_DevOps';
 			}
 		}
-		
 
 		stage ("Verification du  version Maven"){
 			steps{
 				bat """mvn -version"""
 			}
 		}
+		
 
 		 stage ("clean"){
 		 	steps{
