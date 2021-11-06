@@ -115,7 +115,7 @@ pipeline{
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'Rached.chakchouk@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'rached.chakchouk@esprit.tn'
 		}
 		failure{
 			emailext body: 'Build failure', subject: 'Jenkins', to:'rached.chakchouk@esprit.tn'
