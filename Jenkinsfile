@@ -127,5 +127,5 @@ pipeline{
 		failure{
 			emailext body: 'Build failure', subject: 'Jenkins', to:'rached.chakchouk@esprit.tn'
 		}
-	} */
+	} 
 }
