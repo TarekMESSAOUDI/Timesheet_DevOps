@@ -1,10 +1,19 @@
 pipeline{
+
+environment{
+		registry = 'medamin20/timesheet-devops'
+		registryCredential= 'dockerHub'
+		dockerImage = ''
+	}
+
+
+
 		agent any 
 	stages{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'master',
+					git branch: 'Amine_Branch',
 					url : 'https://github.com/medamin20/Timesheet_DevOps';
 			}
 		}
@@ -39,12 +48,30 @@ pipeline{
 			}
 		}
 
-		// /*stage ("Deploiement dans http://localhost:8081/repository/maven-releases/ "){
-		// 	steps{
-		// 		bat """mvn deploy"""
-		// 	}
-		// }*/
-		//
+		
+		stage ("Deploiement"){
+			steps{
+				bat """mvn clean package -Dmaven.test.skip=true -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-1.0.jar"""
+			}
+		}
+
+		stage('Building our image'){
+			steps{ 
+				script{ 
+					dockerImage= docker.build registry + ":$BUILD_NUMBER" 
+				}
+			}
+		}
+
+		stage('Deploy our image'){
+			steps{ 
+				script{
+					docker.withRegistry( '', registryCredential){
+						dockerImage.push()
+					} 
+				} 
+			}
+		}
 	}
 
 	post{
