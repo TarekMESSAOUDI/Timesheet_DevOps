@@ -4,7 +4,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
-	
+
 	agent any 
 	stages{
 		stage ('Checkout GIT'){
@@ -21,8 +21,6 @@ pipeline{
 				bat """mvn -version"""
 			}
 		}
-
-
 		 stage ("Suppression du dossier tareget + Copie du livrable dans le Repository local"){
 	     	steps{
 				bat """mvn clean install"""
@@ -117,7 +115,7 @@ pipeline{
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'Rached.chakchouk@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'rached.chakchouk@esprit.tn'
 		}
 		failure{
 			emailext body: 'Build failure', subject: 'Jenkins', to:'rached.chakchouk@esprit.tn'
