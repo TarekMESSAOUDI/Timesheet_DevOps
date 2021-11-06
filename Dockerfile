@@ -1,4 +1,6 @@
-FROM openjdk:8-jdk-alpine
-EXPOSE 8083
-ADD target/docker-spring-boot.war docker-spring-boot.war
-ENTRYPOINT ["java","-jar","/docker-spring-boot.war"]
+FROM openjdk:8-jre-alpine
+ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \JAVA_OPTS=""
+WORKDIR /app
+ADD target/*.jar timesheet_devops.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "/app/timesheet_devops.jar"]
