@@ -1,6 +1,7 @@
 package tn.esprit.spring.test;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,8 +33,9 @@ public class ProjetServiceImplTest {
 	@Test(timeout = DEFAULT_TIMEOUT)
 	public void testaddprojet() {
 		Projet projet = new Projet("test","testttttttest");
+		assertEquals("test", projet.getNameproject());
 		ps.ajouterProjet(projet);
-		assertNotNull(projet.getId());
+		
 		l.info("projet ajouter");
 		pr.deleteById(projet.getId());
 	}
