@@ -5,6 +5,7 @@ pipeline{
 		dockerImage = ''
 	}
 
+
 	agent any 
 	stages{
 		stage ('Checkout GIT'){
@@ -15,10 +16,10 @@ pipeline{
 					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps';
 
 
-					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps.git';
+					
 
 			}
-			
+
 		}
 
 		stage ("Verification du  version Maven"){
