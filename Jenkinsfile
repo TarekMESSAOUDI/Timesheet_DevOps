@@ -83,7 +83,7 @@ pipeline{
 		}
 		stage('email'){
 			steps{
-			mail bcc: '', body: 'jknlk', cc: '', from: '', replyTo: '', subject: 'jhbj', to: 'houissaghassen@gmail.com'
+			mail bcc: '', body: 'Build Success', cc: '', from: '', replyTo: '', subject: 'Build Success', to: 'houissaghassen@gmail.com'
 			}
 		}
 	}
