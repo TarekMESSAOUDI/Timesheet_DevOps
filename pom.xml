@@ -15,6 +15,10 @@
 	<description>Devops</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -67,11 +71,13 @@
 			<artifactId>primefaces</artifactId>
 			<version>6.1</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.16</version>
-		</dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.11</version>
+  <scope>test</scope>
+</dependency>
 
 	</dependencies>
 
@@ -81,7 +87,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			  
+      
 		</plugins>
 	</build>
+	
+	   <distributionManagement>
+    <repository>
+      <id>my-nexus-snapshots</id>
+      <name>Internal Snapshot Releases</name>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </repository>
+    <snapshotRepository>
+      <id>my-nexus-releases</id>
+      <name>Internal Releases</name>
+      <url>http://localhost:8081/repository/maven-releases/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
