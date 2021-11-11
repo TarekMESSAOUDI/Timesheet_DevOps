@@ -5,7 +5,7 @@ environment{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
-
+  
 
 
 		agent any 
