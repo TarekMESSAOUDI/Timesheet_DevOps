@@ -29,13 +29,6 @@ public class RestControlEntreprise {
 	@Autowired
 	IEntrepriseService ientrepriseservice;
 	
-
-
-
-	
-	// Ajouter Entreprise : http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
-	//{"id":1,"name":"SSII Consulting","raisonSocial":"Cite El Ghazela"}
-
 	@PostMapping("/ajouterEntreprise")
 	@ResponseBody
 	public int ajouterEntreprise(@RequestBody Entreprise ssiiConsulting) {
@@ -44,8 +37,6 @@ public class RestControlEntreprise {
 	}
 	
 
-    
-    // http://localhost:8081/SpringMVC/servlet/deleteEntrepriseById/1
     @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
 	@ResponseBody 
 	public void deleteEntrepriseById(@PathVariable("identreprise")int entrepriseId)
@@ -53,7 +44,7 @@ public class RestControlEntreprise {
 		ientrepriseservice.deleteEntrepriseById(entrepriseId);
 	}
     
-    // http://localhost:8081/SpringMVC/servlet/getEntrepriseById/1
+  
     @GetMapping(value = "getEntrepriseById/{identreprise}")
     @ResponseBody
 	public Entreprise getEntrepriseById(@PathVariable("identreprise") int entrepriseId) {
