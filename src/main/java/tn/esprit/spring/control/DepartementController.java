@@ -1,9 +1,9 @@
-package tn.esprit.spring.rest.control;
+package tn.esprit.spring.control;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MissionExterneRestController {
-
+public class DepartementController {
+	
 
 }
