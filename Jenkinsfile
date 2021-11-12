@@ -5,6 +5,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
+	
 	agent any 
 	stages{
 		stage ('Checkout GIT'){
@@ -15,50 +16,44 @@ pipeline{
 			}
 		}
 
-		stage ("Verification du  version Maven"){
+		stage ("Verification du  version Maven..."){
 			steps{
 				bat """mvn -version"""
 			}
 		}
 
-		/*stage ("Clean install ignore Test"){
-			steps{
-				bat """mvn clean install -Dmaven.test.skip=true"""
-			}
-		}*/
-
-		stage ("Clean"){
+		stage ("Clean..."){
 			steps{
 				bat """mvn clean"""
 			}
 			
 		}
 
-		stage ("Creation du livrable"){
+		stage ("Creation du livrable..."){
 			steps{
 				bat """mvn package -Dmaven.test.skip=true"""
 			}
 		}
 
-		stage ("Lancement des Tests Unitaires"){
+		stage ("Lancement des Tests Unitaires..."){
 			steps{
 				bat """mvn test"""
 			}
 		}
 
-		stage ("Analyse avec Sonar"){
+		stage ("Analyse avec Sonar..."){
 			steps{
 				bat """mvn sonar:sonar"""
 			}
 		}
 
-		stage ("Deploiement"){
+		stage ("Deploiement dans Nexux..."){
 			steps{
-				bat """mvn clean package -Dmaven.test.skip=true -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=2.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-2.0.jar"""
+				bat """mvn clean package -Dmaven.test.skip=true -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=3.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-3.0.jar"""
 			}
 		}
 
-		stage('Building our image'){
+		stage('Building our image...'){
 			steps{ 
 				script{ 
 					dockerImage= docker.build registry + ":$BUILD_NUMBER" 
@@ -66,7 +61,7 @@ pipeline{
 			}
 		}
 
-		stage('Deploy our image'){
+		stage('Deploy our image...'){
 			steps{ 
 				script{
 					docker.withRegistry( '', registryCredential){
@@ -76,7 +71,7 @@ pipeline{
 			}
 		}
 
-		stage('Cleaning up'){
+		stage('Cleaning up...'){
 			steps{
 				bat "docker rmi $registry:$BUILD_NUMBER" 
 			}
