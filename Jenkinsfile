@@ -5,7 +5,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
-	
+
 
 
 		agent any 
@@ -84,7 +84,7 @@ pipeline{
 		}
 		stage('email'){
 			steps{
-			mail bcc: '', body: 'Build Success', cc: '', from: '', replyTo: '', subject: 'Build Success', to: 'houissaghassen@gmail.com'
+			mail bcc: '', body: 'Build Success', cc: '', from: '', replyTo: '', subject: 'Jenkins', to: 'houissaghassen@gmail.com'
 			}
 		}
 	}
