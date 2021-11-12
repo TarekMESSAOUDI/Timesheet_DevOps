@@ -40,7 +40,7 @@ public class EntreriseServiceImplTests {
 	es.ajouterEntreprise(entreprise);
 	assertNotNull(entreprise.getIdEntreprise());
 	l.info("Entreprise added successfuly ");
-//	er.deleteById(entreprise.getIdEntreprise());
+	er.deleteById(entreprise.getIdEntreprise());
 	}
 	
 
@@ -73,4 +73,9 @@ public class EntreriseServiceImplTests {
 	l.info("deleted successfuly" );
 	}
 
+	@Test
+	public void getEntreprise(){
+		
+		l.info("Entrprise : "+es.getEntrepriseById(5));
+	}
 }
