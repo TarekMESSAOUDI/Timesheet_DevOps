@@ -33,40 +33,40 @@ public class EntreriseServiceImplTests {
 	@Autowired
 	 EntrepriseRepository er;
 	
-	//test de la methode ajout
+	
 	@Test(timeout = DEFAULT_TIMEOUT)
-	public void testaddemploye() {
+	public void testAddEntreprise() {
 		Entreprise entreprise = new Entreprise("Moneim Entrepsie","Raison Social");
 	es.ajouterEntreprise(entreprise);
 	assertNotNull(entreprise.getIdEntreprise());
 	l.info("Entreprise added successfuly ");
-	//er.deleteById(entreprise.getId());
+//	er.deleteById(entreprise.getIdEntreprise());
 	}
 	
 
 	
-	//test du nombre des lignes dans la base il doit etre sup à 0
+	
 	@Test
 	public void testListEntreprises() {
 	List<Entreprise> e = (List<Entreprise>) er.findAll();
 	assertThat(e).size().isGreaterThan(0);
 	}
 	
-	//test de la methode count "le retour de la methode ne doit pas etre null".
+	
 	@Test
 	public void testcountEntreprises() {
 	long nbrEm = er.count();
 	assertNotNull(nbrEm);
 	}
 	
-	//test que le nom n'est pas nullgh
+	
 	@Test
 	public void testNomEnttreprise(){
 		Entreprise e = er.findByNameEntreprsie("Moneim Ent");
 		assertNotNull(e.getNameEntreprise());
 	}
 	
-	// test du suppression de l'entreprise
+	
 	@Test(timeout = 5000) 
 	public void testDeleteEmploye() {
 	es.deleteEntrepriseById(3);

@@ -36,5 +36,14 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 
 
+	@Override
+	public Entreprise updateEntreprise(int id, Entreprise e) {
+		Entreprise existEntreprise=entrepriseRepoistory.findById(id).get();
+		existEntreprise.setNameEntreprise(e.getNameEntreprise());
+		existEntreprise.setNameEntreprise(e.getRaisonSocial());
+		return e;
+	}
+
+
 
 }
