@@ -5,6 +5,7 @@ pipeline{
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
+	
 
 
 		agent any 
@@ -33,7 +34,7 @@ pipeline{
 
  		 stage ("creation de livrable"){
 		 	steps{
-		 		bat """mvn package -Dmaven.test.skip=true"""
+		 		bat """mvn package -Dmaven.test.skip=true""" 
 		 	}
 		 }
 
@@ -87,7 +88,7 @@ pipeline{
 			}
 		}
 	}
-	
+
 
 	post{
 		success{
