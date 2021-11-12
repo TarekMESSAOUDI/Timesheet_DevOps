@@ -76,10 +76,10 @@ environment{
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
+			emailext body: 'Build success', subject: 'Jenkins', to:'benhssanmohamedamin@gmail.com'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'mohamedamin.benhssan1@esprit.tn'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'benhssanmohamedamin@gmail.com'
 		}
 
 	}
