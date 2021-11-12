@@ -74,13 +74,20 @@ environment{
 		}
 	}
 
+	// post{
+	// 	success{
+	// 		emailext body: 'Build success', subject: 'Jenkins', to:'benhssanmohamedamin@gmail.com'
+	// 	}
+	// 	failure{
+	// 		emailext body: 'Build failure', subject: 'Jenkins', to:'benhssanmohamedamin@gmail.com'
+	// 	}
+
+
 	post{
-		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'benhssanmohamedamin@gmail.com'
-		}
-		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'benhssanmohamedamin@gmail.com'
-		}
+	always{
+		emailext body: 'Build # $BUILD_NUMBER - $BUILD_STATUS!', subject: 'mail of pipeline satut', to: 'benhssanmohamedamin@gmail.com'
+	}
+	}
 
 	}
 }
