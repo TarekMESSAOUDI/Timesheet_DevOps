@@ -18,7 +18,7 @@ import tn.esprit.spring.service.MissionServiceImpl;
 public class MissionRestController {
 	
 	@Autowired
-	MissionServiceImpl MS ;
+	MissionServiceImpl ms ;
 	
 
 	
@@ -28,7 +28,7 @@ public class MissionRestController {
 		@ResponseBody
 		public Mission ajouterMission(@RequestBody Mission mission) 
 		{
-			MS.ajouterMission(mission);
+			ms.ajouterMission(mission);
 			return mission ;
 		}
 	
@@ -38,7 +38,7 @@ public class MissionRestController {
 
 		@DeleteMapping(value = "/deleteMission/{id}")
 		public void deleteMission(@PathVariable("id") int id) {
-			MS.deleteMission(id);	}
+			ms.deleteMission(id);	}
 	    
 		
 		
@@ -46,13 +46,13 @@ public class MissionRestController {
 		@GetMapping("/count-Missions")
 		@ResponseBody
 		public long getMissionsnumber() {
-		return MS.getMissionNumber();
+		return ms.getMissionNumber();
 		}
 		
 		@PutMapping("/update-Mission")
 		@ResponseBody
 		public Mission updateMission(@RequestBody Mission mis) {
-		return MS.MissionUpadate(mis);
+		return ms.missionUpadate(mis);
 				
 		}
 		
@@ -62,7 +62,7 @@ public class MissionRestController {
 	    @ResponseBody
 		public List<Mission> getAllEmployes() {
 			
-			return MS.getMissions();
+			return ms.getMissions();
 		}
 		
 		
