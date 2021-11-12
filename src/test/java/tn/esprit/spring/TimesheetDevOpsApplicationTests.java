@@ -85,7 +85,7 @@ public class TimesheetDevOpsApplicationTests {
 	public void testDeleteEmploye() {
 		Employe emp = new Employe();
 		assertNotNull(emp);
-		er.deleteById((long) 56);
+		er.deleteById((long) 57);
 		l.info("Employe deleted successfuly" );
 	}
 }
