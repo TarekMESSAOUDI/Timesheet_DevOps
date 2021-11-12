@@ -1,4 +1,5 @@
 pipeline{
+
 	environment{
 		registry = 'rachedchakchouk/timesheet_img'
 		registryCredential= 'dockerHub'
