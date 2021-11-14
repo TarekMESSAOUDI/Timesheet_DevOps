@@ -16,9 +16,9 @@ import tn.esprit.spring.service.IProjetService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProjetServiceImplTest {
+public class ProjetTest {
 	private static final long DEFAULT_TIMEOUT = 10000;
-	private static final Logger l = LogManager.getLogger(ProjetServiceImplTest.class);
+	private static final Logger l = LogManager.getLogger(ProjetTest.class);
 
 	@Autowired
 	IProjetService ps;
@@ -26,7 +26,7 @@ public class ProjetServiceImplTest {
 	IProjetRepository pr;
 	
 	
-	// test de methode d'ajout
+	// test de methode d'ajout et supression
 	
 	
 	@Test(timeout = DEFAULT_TIMEOUT)

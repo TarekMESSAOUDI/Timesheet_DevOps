@@ -1,6 +1,7 @@
 pipeline{
+
 	environment{
-		registry = '193jmt5213/timesheet_devops'
+		registry = 'rachedchakchouk/timesheet_img'
 		registryCredential= 'dockerHub'
 		dockerImage = ''
 	}
@@ -10,8 +11,8 @@ pipeline{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'Tarek_Branch',
-					url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps';
+					git branch: 'Rached_Branch',
+					url : 'https://github.com/rachedchakchouk/Timesheet_DevOps';
 			}
 		}
 
@@ -78,11 +79,8 @@ pipeline{
 }
 
 	post{
-		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
-		}
-		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'tarek.messaoudi@esprit.tn'
-		}
+	always{
+		emailext body: 'Build # $BUILD_NUMBER - $BUILD_STATUS!', subject: 'mail of pipeline satut', to: 'rached.chakchouk@esprit.tn'
+	}
 	}
 }
